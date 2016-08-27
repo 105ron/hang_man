@@ -4,7 +4,6 @@ module HangMan
 
 
 	  def secret_word
-	  	puts "I ran"
 	  	word = IO.readlines("5desk.txt")[random_line]
 	  	check_suitability(word)
 	  	return word
