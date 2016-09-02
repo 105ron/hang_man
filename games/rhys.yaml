@@ -1,17 +1,14 @@
 ---
-:word: fascination
-:guess: 'e, '
-:display: '_  a  _  _  i  _  a  _  i  _  _  '
+:word: grouping
+:guess: ''
+:display: '_  _  _  _  _  _  _  _  '
 :remaining:
-- f
-- 
-- s
-- c
-- 
-- n
-- 
-- t
-- 
+- g
+- r
 - o
+- u
+- p
+- i
 - n
-:turn: 3
+- g
+:turn: 0

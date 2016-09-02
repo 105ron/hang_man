@@ -2,7 +2,7 @@ module HangMan
 
 
   class Game
-	attr_accessor :attempts,:secret_word,:guess,:string_of_guesses, :display_string, :secret_word_array, :win
+	attr_accessor :attempts,:secret_word,:guess,:string_of_guesses, :display_string, :secret_word_array, :won
 
 
 	def initialize
@@ -44,6 +44,11 @@ module HangMan
   	end
 
 
+	def save
+	  config = {word: @secret_word, guess: @string_of_guesses, display: @display_string, remaining: @secret_word_array, turn: @attempts}
+	  FileOperations.new.save(config, @user)
+	end
+
 	private
 
 
@@ -75,19 +80,10 @@ module HangMan
 	end
 
 
-	def save
-	  config = {word: @secret_word, guess: @string_of_guesses, display: @display_string, remaining: @secret_word_array, turn: @attempts}
-	  FileOperations.new.save(config, @user)
-	end
-
-
 	def guess_so_far
 	  puts "You're guesses so far have been..." unless string_of_guesses == ''
   	  puts @string_of_guesses[0..-3]  #-2 doesn't display last comma
   	end
-
-
-
 
 
 	def match_character
@@ -150,8 +146,16 @@ module HangMan
 	    hangman.user = @user
 	    hangman.play
 	  else
-	  	save
+	  	if @won
+	  	  hangman = Game.new
+	      hangman.user = @user
+	      hangman.save
+	  	else
+	  	  save
+		end	     
 	  end
+
+	  
 	end
 
   end

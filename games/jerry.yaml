@@ -1,14 +1,16 @@
 ---
-:word: hobbyist
-:guess: 'a, d, e, '
-:display: '_  _  _  _  _  _  _  _  '
+:word: inducement
+:guess: ''
+:display: '_  _  _  _  _  _  _  _  _  _  '
 :remaining:
-- h
-- o
-- b
-- b
-- y
 - i
-- s
+- n
+- d
+- u
+- c
+- e
+- m
+- e
+- n
 - t
-:turn: 3
+:turn: 0
