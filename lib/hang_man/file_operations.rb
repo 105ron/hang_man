@@ -20,15 +20,18 @@ module HangMan
 
 
 	  def secret_word
-	  	word = IO.readlines("5desk.txt")[random_line]
+	  	file_path = get_path
+	  	file_path << "5desk.txt"
+	  	word = IO.readlines(file_path)[random_line]
 	  	check_suitability(word)
 	  	return word
 	  end
 
 
 	  def save(config,username)
+	  	@user = username
 	  	Dir.mkdir("games") unless Dir.exists?("games")
-      	File.open("games/#{username}.yaml", "w") { |file| file.puts(YAML::dump(config)) }
+      	File.open(get_path_save, "w") { |file| file.puts(YAML::dump(config)) }
       	puts "To load game next time, use #{username} as username."
       	exit
 	  end
@@ -38,12 +41,12 @@ module HangMan
 	  
 
 	  def user_has_saved_game
-	    File.file?("games/#{@user}.yaml")
+	    File.file?(get_path_save)
 	  end
 
 
 	  def load_files
-	  	file = File.read("games/#{@user}.yaml")
+	  	file = File.read(get_path_save)
         config = YAML::load(file)
         hangman = Game.new
         hangman.user = @user
@@ -54,6 +57,18 @@ module HangMan
 
 	  def random_line
 	  	rand(61405) #61405 lines in 5desk.txt
+	  end
+
+	  def get_path
+	  	string = File.expand_path("../", File.dirname(__FILE__))
+	  	string[0..-4]
+	  end
+
+
+	  def get_path_save
+	  	string = get_path 
+	  	string = string + "/games/" + @user + ".yaml"
+	  	return string
 	  end
 
 
