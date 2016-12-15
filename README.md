@@ -6,6 +6,8 @@ The user may, at any time, attempt to guess the whole word. If the word is corre
 
 At the start of any turn, instead of making a guess the user has the option to save the game. When the program loads, the user inputs their user name used when saving the game to jump to where they were when they saved.
 
+To run the game, run `ruby example/example_game.rb`.
+
 This is a project for [TheOdinProject's](http://www.theodinproject.com) Ruby track. See [here](http://www.theodinproject.com/courses/ruby-programming/lessons/file-i-o-and-serialization?ref=lc-pb) for more information.
 
 
