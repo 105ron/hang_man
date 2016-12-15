@@ -1,41 +1,9 @@
-# HangMan
+# Hangman
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/hang_man`. To experiment with that code, run `bin/console` for an interactive prompt.
+Hangman loads a word between 5 and 12 characters from [this file](http://scrapmaker.com/view/twelve-dicts/5desk.txt).The word to guess is represented by a row of dashes, representing each letter of the word. If the guessing user suggests a letter which occurs in the word, the other computer displays it in all its correct positions. If the suggested letter does not occur in the word, the computer tallies the number of incorrect guesses.
 
-TODO: Delete this and the text above, and describe your gem
+The user may, at any time, attempt to guess the whole word. If the word is correct, the game is over and the user wins. Otherwise, the computer penalizes the user by adding to the incorrect tally. If the makes 10 incorrect guesses the game is lost. However, the user can also win by guessing all the letters that appears in the word, thereby completing the word, before the tally reaches 10. See [Wikipedia](http://www.theodinproject.com/courses/ruby-programming/lessons/file-i-o-and-serialization?ref=lc-pb) for more information and game rules.
 
-## Installation
+This is a project for [TheOdinProject's](http://www.theodinproject.com) Ruby track. See [here](http://www.theodinproject.com/courses/ruby-programming/lessons/file-i-o-and-serialization?ref=lc-pb) for more information.
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'hang_man'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install hang_man
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/hang_man. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
-
-
-## License
-
-The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
 
